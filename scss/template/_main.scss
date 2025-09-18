@@ -1,0 +1,21 @@
+.linkLists {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .state {
+    display: flex;
+    flex-direction: column;
+  }
+  .formBox {
+    flex: 1 1 auto;
+    .formListTitle {
+      width: 130px;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,266 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
+@use '../variable' as *; //變數
+@use '../basic/mixin' as *; //mixin
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  @include screen('xsMobile') {
+    width: 100%;
+  }
+
+  caption {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.125rem;
+    margin-bottom: 0.5em;
+
+    .summary {
+      display: block;
+      font-weight: normal;
+    }
+  }
+}
+
+thead + tbody {
+  th {
+    color: #555;
+    background: #dee0e3;
+  }
+}
+
+.tableList,
+.tableScroll {
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+
+  table {
+    background: #fff;
+  }
+
+  th,
+  td {
+    //border-left: #dee0e3 1px solid;
+    //border-right: #dee0e3 1px solid;
+    border-top: $colorNeutral60 1px solid;
+    border-bottom: $colorNeutral60 1px solid;
+    padding: 1em 0.5em;
+  }
+
+  td {
+    color: #555;
+    word-break: break-all;
+
+    a {
+      word-break: break-all;
+      // &:hover {
+      //   text-decoration: underline;
+      // }
+    }
+
+    &.num,
+    &.state,
+    &.light,
+    &.date,
+    &.retest {
+      @include screen('xsMobileMin') {
+        text-align: center;
+      }
+    }
+
+    &.date {
+      @include screen('xsMobileMin') {
+        text-align: center;
+      }
+    }
+    &.light {
+      img {
+        height: 48px;
+        width: 48px;
+        vertical-align: middle;
+      }
+    }
+    &.retest {
+      button {
+        background-color: $colorPrimary;
+        padding: 12px;
+        &:hover,
+        &:focus-visible {
+          background-color: $colorPrimaryDark;
+        }
+      }
+    }
+  }
+  .state {
+    font-weight: bold;
+    color: $colorWordLight;
+    &.normal {
+      color: $noticeSuccessWord;
+    }
+    &.abnormal {
+      color: $noticeErrorWord;
+    }
+  }
+
+  th {
+    background-color: $colorSecondary;
+    color: #fff;
+    // text-align: center;
+    white-space: nowrap;
+    border-bottom: none;
+    font-weight: 500;
+  }
+
+  tbody {
+    th {
+      color: #fff;
+      background: $colorSecondary;
+    }
+  }
+
+  table {
+    &:has(thead) {
+      tbody {
+        th {
+          color: $colorWord;
+          background: #dee0e3;
+        }
+      }
+    }
+  }
+
+  .tableScrollIn {
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .caption {
+    position: relative;
+    z-index: 9;
+  }
+
+  .scrollTablePrevBtn {
+    left: 0;
+    //  display: none;
+  }
+
+  .scrollTableNextBtn {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  .scrollTablePrevBtn,
+  .scrollTableNextBtn {
+    color: transparent;
+    font-size: 0;
+    width: 50px;
+    position: absolute;
+    bottom: 20px;
+    top: 0;
+    @include transition(0.3);
+    border-radius: 0px;
+    display: none;
+    background: linear-gradient(to left, rgba(#f8f8f8, 0) 33%, rgba(#f8f8f8, 0.5) 50%, rgba(#f8f8f8, 1) 100%);
+    z-index: 5;
+    padding: 0;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: url(../images/basic/icon/arrow_back_dk.svg) no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.tableScroll {
+  table {
+    min-width: 797px;
+  }
+}
+
+.tableList {
+  table {
+    @include screen('xsMobile') {
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+        margin-bottom: 10px;
+        border: #ddd 1px solid;
+
+        @include screen('xsMobile') {
+          border-color: #97a3b6;
+        }
+      }
+
+      td {
+        border: none;
+        position: relative;
+        padding-left: 0.5em;
+        padding-top: 2em;
+        white-space: normal;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+
+        @include screen('xsMobile') {
+          border-color: #dee0e3;
+
+          &:last-child {
+            border: none;
+          }
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      &.loaded td {
+        &:before {
+          content: attr(data-td-title);
+          position: absolute;
+          top: 0.5em;
+          left: 0.5em;
+          width: 30%;
+          padding-right: 10px;
+          white-space: nowrap;
+          text-align: left;
+          font-weight: normal;
+          color: #888;
+          font-size: Rem(14);
+          display: block;
+        }
+      }
+    }
+  }
+}
