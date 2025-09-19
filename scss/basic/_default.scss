@@ -137,6 +137,9 @@ main {
       padding: 60px 72px;
       border-radius: var(--borderRadius24);
       color: $colorWord;
+      @include screen('tablet') {
+        padding: 40px 40px;
+      }
       @include screen('mobile') {
         padding: 30px 30px;
       }

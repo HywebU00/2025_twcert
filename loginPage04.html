@@ -146,30 +146,65 @@
                 2. 勾選「加入受測清單」的連結，將提供紅隊(檢測方)瀏覽。<br />
                 3. 勾選加入受測清單的連結於第一次儲存時，自動檢測連結並顯示檢測結果，連線正常顯示綠燈，連線異常顯示紅燈；未勾選加入受測清單的連結不檢測，顯示不提供。
               </p>
+              <!-- 卡片清單 -->
               <div class="linkLists">
+                <!-- 卡片-編輯狀態 -->
+                <div class="card normal editMode">
+                  <div class="state">
+                    <img src="images/light_normal.svg" alt="正常" />
+                    <span>正常</span>
+                  </div>
+                  <div class="cardContent">
+                    <div class="formBox">
+                      <div class="formList inline">
+                        <label class="formListTitle" for="targetId4"><em aria-label="必填" class="necessary">必填</em>URL連結</label>
+                        <div class="formContent"><input type="text" name="" id="targetId4" placeholder="" value="https://www.twcert.org.tw/" required /></div>
+                      </div>
+                      <div class="formList inline">
+                        <label class="formListTitle" for="targetId3">說明</label>
+                        <div class="formContent">
+                          <input type="text" name="" id="targetId3" placeholder="" value="電腦網路危機協調暨處理中心" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="controlBox">
+                      <div class="inputOption">
+                        <input type="checkbox" name="checkboxGrp2" id="CE2" value="enable" />
+                        <label for="CE2">加入受測者清單</label>
+                      </div>
+                      <div class="btnBox">
+                        <button type="button" class="btnSecondary">儲存</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 卡片-正常狀態 -->
                 <div class="card normal">
                   <div class="state">
                     <img src="images/light_normal.svg" alt="正常" />
                     <span>正常</span>
                   </div>
-                  <div class="formBox">
-                    <div class="formList inline">
-                      <label class="formListTitle" for="targetId4"><em aria-label="必填" class="necessary">必填</em>URL連結</label>
-                      <div class="formContent">
-                        <input type="text" name="" id="targetId4" placeholder="" value="" />
+                  <div class="cardContent">
+                    <div class="formBox">
+                      <div class="formList inline">
+                        <label class="formListTitle" for="targetId4"><em aria-label="必填" class="necessary">必填</em>URL連結</label>
+                        <div class="formContent"><input type="text" name="" id="targetId4" placeholder="" value="https://www.twcert.org.tw/" disabled /></div>
+                      </div>
+                      <div class="formList inline">
+                        <label class="formListTitle" for="targetId3">說明</label>
+                        <div class="formContent">
+                          <input type="text" name="" id="targetId3" placeholder="" value="電腦網路危機協調暨處理中心" disabled />
+                        </div>
                       </div>
                     </div>
-                    <div class="formList inline">
-                      <label class="formListTitle" for="targetId3">說明</label>
-                      <div class="formContent">
-                        <input type="text" name="" id="targetId3" placeholder="" value="" />
+                    <div class="controlBox">
+                      <div class="inputOption">
+                        <input type="checkbox" name="checkboxGrp2" id="CE2" value="enable" />
+                        <label for="CE2">加入受測者清單</label>
                       </div>
-                    </div>
-                  </div>
-                  <div class="formList">
-                    <div class="inputOption">
-                      <input type="checkbox" name="checkboxGrp2" id="CE2" value="enable" />
-                      <label for="CE2">加入受測者清單</label>
+                      <div class="btnBox">
+                        <button type="button" class="btnSecondary">編輯</button>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -19,7 +19,7 @@ $colorWordDark: #111111;
 //neutral
 $colorNeutral100: #ffffff;
 $colorNeutral80: #f7f8fa;
-$colorNeutral70: #f4f4f8;
+$colorNeutral70: #f0f0f2;
 $colorNeutral60: #dee0e3;
 $colorNeutral50: #cacfd3;
 $colorNeutral40: #abb8c3;
@@ -29,7 +29,7 @@ $colorNeutral10: #333333;
 $colorNeutral0: #111111;
 
 // other
-$colorDisabled: #dee0e3;
+$colorDisabled: $colorNeutral70;
 $colorError: #c40000;
 $checkboxRadio: #97a3b6;
 $colorAccessibility: #c40000;

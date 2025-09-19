@@ -1,8 +1,8 @@
 @use 'sass:color';
 @use 'sass:math';
 @use 'sass:map';
-@use "../variable" as *; //變數
-@use "../basic/mixin" as *; //mixin
+@use '../variable' as *; //變數
+@use '../basic/mixin' as *; //mixin
 
 .listGroup {
   ul {
@@ -10,10 +10,10 @@
   }
 
   li {
-    border-top: 1px solid #DEE0E3;
+    border-top: 1px solid #dee0e3;
 
     &:last-child {
-      border-bottom: 1px solid #DEE0E3;
+      border-bottom: 1px solid #dee0e3;
     }
 
     a {
@@ -75,7 +75,6 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-
   }
 
   @include screen('tablet') {
@@ -103,7 +102,7 @@
     @include screen('xsMobile') {
       width: 100%;
       padding-bottom: 24px;
-      border-bottom: 1px solid #DEE0E3;
+      border-bottom: 1px solid #dee0e3;
     }
 
     a {
@@ -115,7 +114,7 @@
       @include screen('tablet') {
         padding: 0;
 
-        [class*="flexTpl"] {
+        [class*='flexTpl'] {
           flex-direction: column;
         }
 
@@ -227,7 +226,7 @@
   li {
     width: itemWidth(32, 4);
     background: #fff;
-    box-shadow: 0px 4px 16px -4px rgba(38, 43, 67, 0.30);
+    box-shadow: 0px 4px 16px -4px rgba(38, 43, 67, 0.3);
     @include transition(0.3);
 
     @include screen('tablet') {
@@ -244,7 +243,7 @@
 
     &:hover {
       transform: translate(-5px, -5px);
-      box-shadow: 5px 9px 16px -4px rgba(38, 43, 67, 0.30);
+      box-shadow: 5px 9px 16px -4px rgba(38, 43, 67, 0.3);
     }
 
     a {
@@ -308,6 +307,134 @@
         overflow: hidden;
         color: $colorWord;
         margin-bottom: Rem(16);
+      }
+    }
+  }
+}
+
+.linkLists {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .card {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 10px 32px;
+    background-color: $colorNeutral80;
+    box-shadow: $shadow50;
+    border-radius: var(--borderRadius12);
+    @include screenMax('1100') {
+      gap: 20px;
+    }
+    @include screen('tablet') {
+      align-items: stretch;
+    }
+    &.editMode {
+      background-color: #fff;
+      .btnBox {
+        button {
+          background-color: $btnPrimary;
+          &:hover {
+            background-color: $btnPrimaryHover;
+          }
+        }
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: calc(100% - 44px);
+      background-color: $colorNeutral60;
+      left: 0;
+      top: 22px;
+      border-radius: 0 4px 4px 0;
+    }
+    &.normal {
+      &::before {
+        background-color: color.adjust($noticeSuccessWord, $lightness: 10%);
+      }
+      .state {
+        color: $noticeSuccessWord;
+      }
+    }
+    &.abnormal {
+    }
+    &.notAvailable {
+    }
+    &.notDetected {
+    }
+  }
+  .state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    height: 100%;
+    gap: 10px;
+    padding: 0 60px 0 36px;
+    margin: 20px 0;
+    border-right: 1px dashed $colorNeutral60;
+    font-weight: bold;
+    white-space: nowrap;
+    @include screenMax('1100') {
+      padding: 0 50px 0 26px;
+    }
+  }
+  .cardContent {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 30px;
+    @include screen('tablet') {
+      flex-direction: column;
+    }
+  }
+  .formBox {
+    flex: 1 1 auto;
+    display: flex;
+
+    .formListTitle {
+      width: 130px;
+      text-align: right;
+      // @include screen('tablet') {
+      //   width: 100%;
+      //   text-align: left;
+      // }
+    }
+  }
+  // .formContent {
+  //   .value {
+  //     position: relative;
+  //     padding: 10px 16px;
+  //     //margin: 10px 0;
+  //     line-height: 1.4;
+  //     //border-left: 1px solid $colorNeutral50;
+  //     background-color: $colorNeutral80;
+  //     word-break: break-word;
+  //     &::before {
+  //     }
+  //   }
+  // }
+  .controlBox {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    @include screen('tablet') {
+      flex-direction: row;
+      gap: 30px;
+    }
+    .inputOption {
+      margin: 12px 0;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+    .btnBox {
+      padding: 12px 0;
+      button {
+        min-width: 160px;
+        width: 100%;
       }
     }
   }
