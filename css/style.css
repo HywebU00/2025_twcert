@@ -2820,6 +2820,7 @@ main .mainContentBox .mainContent {
   padding: 60px 72px;
   border-radius: var(--borderRadius24);
   color: #333333;
+  box-shadow: 0px 10px 30px rgba(2, 54, 115, 0.15);
 }
 @media screen and (max-width: 991px) {
   main .mainContentBox .mainContent {
@@ -5878,6 +5879,7 @@ header .topNav {
   line-height: 2;
   color: #111;
   text-decoration: none;
+  font-size: 1rem;
 }
 @media screen and (max-width: 991px) {
   .tagBox ul a,
