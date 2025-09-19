@@ -161,6 +161,9 @@ main {
       background: color.adjust($colorSecondary, $lightness: 65%) url(../images/sec_bg.png) no-repeat right top;
       background-size: cover;
       border-radius: var(--borderRadius12);
+      @include screen('mobile') {
+        padding: 20px 30px;
+      }
     }
   }
 

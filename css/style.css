@@ -2850,6 +2850,11 @@ main .mainContentBox .ruleBox {
   background-size: cover;
   border-radius: var(--borderRadius12);
 }
+@media screen and (max-width: 767px) {
+  main .mainContentBox .ruleBox {
+    padding: 20px 30px;
+  }
+}
 main.innerPage:not(.hasSide) section {
   width: 100%;
   margin: 0 auto;
