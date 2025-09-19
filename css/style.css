@@ -4693,7 +4693,7 @@ button.active, button:hover {
   color: #333333;
   padding: 0px 12px;
   border-radius: var(--borderRadius8);
-  border: 1px solid #f0f0f2;
+  border: 1px solid #dee0e3;
   background: #fff;
   flex-grow: 1;
 }
@@ -9048,21 +9048,31 @@ section:last-child {
     align-items: stretch;
   }
 }
+@media screen and (max-width: 767px) {
+  .linkLists .card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 32px;
+  }
+}
 .linkLists .card.editMode {
   background-color: #fff;
 }
-.linkLists .card.editMode .btnBox button {
+.linkLists .card.editMode .btnBox .btnSecondary {
   background-color: #00856e;
 }
-.linkLists .card.editMode .btnBox button:hover {
+.linkLists .card.editMode .btnBox .btnSecondary:hover {
   background-color: rgb(0, 79.8, 66);
+}
+.linkLists .card.editMode .btnBox .btn {
+  background-color: #dee0e3;
 }
 .linkLists .card::before {
   content: "";
   position: absolute;
   width: 8px;
   height: calc(100% - 44px);
-  background-color: #dee0e3;
+  background-color: transparent;
   left: 0;
   top: 22px;
   border-radius: 0 4px 4px 0;
@@ -9073,6 +9083,18 @@ section:last-child {
 .linkLists .card.normal .state {
   color: #00754b;
 }
+.linkLists .card.abnormal::before {
+  background-color: rgb(255, 68.5, 68.5);
+}
+.linkLists .card.abnormal .state {
+  color: #c40000;
+}
+.linkLists .card.notAvailable::before {
+  background-color: #abb8c3;
+}
+.linkLists .card.notDetected::before {
+  background-color: #dee0e3;
+}
 .linkLists .state {
   display: flex;
   flex-direction: column;
@@ -9081,7 +9103,6 @@ section:last-child {
   height: 100%;
   gap: 10px;
   padding: 0 60px 0 36px;
-  margin: 20px 0;
   border-right: 1px dashed #dee0e3;
   font-weight: bold;
   white-space: nowrap;
@@ -9089,6 +9110,15 @@ section:last-child {
 @media screen and (max-width: 1100px) {
   .linkLists .state {
     padding: 0 50px 0 26px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .linkLists .state {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px dashed #dee0e3;
+    padding: 0 0 20px 0;
+    width: 100%;
   }
 }
 .linkLists .cardContent {
@@ -9099,6 +9129,7 @@ section:last-child {
 @media screen and (max-width: 991px) {
   .linkLists .cardContent {
     flex-direction: column;
+    gap: 20px;
   }
 }
 .linkLists .formBox {
@@ -9109,6 +9140,15 @@ section:last-child {
   width: 130px;
   text-align: right;
 }
+@media screen and (max-width: 575px) {
+  .linkLists .formBox .formListTitle {
+    width: 100%;
+    text-align: left;
+  }
+}
+.linkLists .formBtnBox {
+  text-align: center;
+}
 .linkLists .controlBox {
   display: flex;
   flex-direction: column;
@@ -9117,19 +9157,38 @@ section:last-child {
 @media screen and (max-width: 991px) {
   .linkLists .controlBox {
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 30px;
   }
 }
+@media screen and (max-width: 767px) {
+  .linkLists .controlBox {
+    justify-content: space-between;
+    margin: 0;
+    gap: 20px;
+  }
+}
 .linkLists .controlBox .inputOption {
-  margin: 12px 0;
+  margin: 14px 0;
   white-space: nowrap;
   flex-wrap: nowrap;
 }
+@media screen and (max-width: 767px) {
+  .linkLists .controlBox .inputOption {
+    margin: 0;
+  }
+}
 .linkLists .controlBox .btnBox {
   padding: 12px 0;
+  display: flex;
+  gap: 10px;
+}
+@media screen and (max-width: 767px) {
+  .linkLists .controlBox .btnBox {
+    padding: 0;
+  }
 }
 .linkLists .controlBox .btnBox button {
-  min-width: 160px;
   width: 100%;
 }
 
