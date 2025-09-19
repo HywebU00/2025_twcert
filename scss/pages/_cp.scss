@@ -1,8 +1,8 @@
 @use 'sass:color';
 @use 'sass:math';
 @use 'sass:map';
-@use "../variable" as *; //變數
-@use "../basic/mixin" as *; //mixin
+@use '../variable' as *; //變數
+@use '../basic/mixin' as *; //mixin
 
 .contentGroup {
   color: #111;
@@ -13,19 +13,20 @@
 }
 
 .contentInfo {
-  background: #DEE0E3;
+  background: #dee0e3;
   color: $colorWord;
   border-left: $colorSecondary 5px solid;
   padding: 32px;
 }
 
 .pageInfo {
+  font-size: Rem(16);
   ul {
     display: flex;
     gap: 16px 32px;
     flex-wrap: wrap;
     border-radius: var(--borderRadius8);
-    border: 1px solid #DEE0E3;
+    border: 1px solid #dee0e3;
     background: #fff;
     color: $colorWordLight;
     @include liReset;
@@ -51,8 +52,8 @@
 
 .contentLinkBox {
   & > ul {
-    border-top: #97A3B6 3px solid;
-    border-bottom: #97A3B6 3px solid;
+    border-top: #97a3b6 3px solid;
+    border-bottom: #97a3b6 3px solid;
     @include liReset;
 
     li {
@@ -60,14 +61,14 @@
       position: relative;
 
       &:not(:last-child) {
-        border-bottom: #DEE0E3 1px solid;
+        border-bottom: #dee0e3 1px solid;
       }
 
       &::before {
         content: '';
         width: 3px;
         height: 12px;
-        background: #69707D;
+        background: #69707d;
         display: block;
         position: absolute;
         left: 8px;
@@ -89,5 +90,5 @@
   display: block;
   padding: 32px;
   border-left: 5px solid $colorSecondary;
-  background: #DEE0E3;
+  background: #dee0e3;
 }
