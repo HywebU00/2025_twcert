@@ -5960,7 +5960,7 @@ header .topNav {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px 0 32px;
+  padding: 32px 0;
 }
 .pagination .formInline {
   display: flex;
@@ -5971,7 +5971,7 @@ header .topNav {
   color: #555;
 }
 .pagination .formInline span {
-  color: #3772CC;
+  color: #3772cc;
 }
 .pagination .formInline button {
   border-radius: var(--borderRadius4);
@@ -6016,7 +6016,7 @@ header .topNav {
   align-items: center;
   gap: 10px;
   color: #333333;
-  background: #DEE0E3;
+  background: #dee0e3;
   border-radius: var(--borderRadius4);
   text-decoration: none;
 }
